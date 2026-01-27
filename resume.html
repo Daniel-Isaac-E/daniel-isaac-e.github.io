@@ -1,49 +1,99 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Resume | Daniel Isaac E</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{margin:0;font-family:system-ui;background:#070a12;color:#e5e7eb}
-.wrap{max-width:900px;margin:auto;padding:30px}
-.card{background:#0b1020;border:1px solid #111827;border-radius:22px;padding:28px}
-h1{margin-top:0}
-h2{color:#ff2d2d;margin-top:28px}
-ul{line-height:1.8}
-a{color:#ff2d2d;text-decoration:none}
+:root{
+  --bg:#070a12; --card:#0b1020; --line:#111827;
+  --text:#e5e7eb; --muted:#9ca3af; --red:#ff2d2d;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:system-ui;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+.gridbg{
+  position:fixed; inset:0; z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,45,45,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,45,45,.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity:.18;
+  animation: drift 18s linear infinite;
+}
+@keyframes drift{to{transform:translate3d(-60px,-60px,0)}}
+
+.wrap{max-width:900px;margin:auto;padding:28px}
+.card{
+  background:rgba(11,16,32,.92);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:26px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+h1{margin:0}
+p{color:var(--muted);line-height:1.7}
+h2{color:var(--red);margin-top:24px;margin-bottom:8px;font-size:16px;letter-spacing:.7px;text-transform:uppercase}
+ul{line-height:1.8;color:var(--text)}
+.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+a.btn{
+  padding:10px 16px;border-radius:14px;
+  border:1px solid var(--line);
+  text-decoration:none;color:var(--text);
+  background:rgba(0,0,0,.25);
+  transition:.25s;
+}
+a.btn:hover{border-color:var(--red);transform:translateY(-2px)}
+a.download{
+  background:rgba(255,45,45,.14);
+  border-color:rgba(255,45,45,.6);
+}
 </style>
 </head>
 
 <body>
+<div class="gridbg"></div>
+
 <div class="wrap">
-<div class="card">
-<h1>Daniel Isaac E</h1>
-<p>Cybersecurity Student · Offensive Security Focus</p>
+  <div class="card">
+    <h1>Resume — Daniel Isaac E</h1>
+    <p>Cybersecurity student • Offensive mindset • Threat analysis • SOC workflows</p>
 
-<h2>Skills</h2>
-<ul>
-<li>Penetration Testing (Web, Basics)</li>
-<li>Reconnaissance & OSINT</li>
-<li>LOTL & Post-Compromise Analysis</li>
-<li>SOC Workflows & Detection Thinking</li>
-<li>Python · Linux · Nmap · Burp · Wireshark</li>
-</ul>
+    <div class="nav">
+      <a class="btn" href="/">Home</a>
+      <a class="btn" href="/projects.html">Projects</a>
+      <a class="btn" href="/blog.html">Blog</a>
+      <a class="btn download" href="/assets/Daniel_Isaac_E_Resume.pdf" download>Download Resume (PDF)</a>
+    </div>
 
-<h2>Projects</h2>
-<ul>
-<li>SSH Honeypot with attacker telemetry</li>
-<li>IoT vulnerability scanner (Nmap + Shodan)</li>
-<li>Security research writeups on Medium</li>
-</ul>
+    <h2>Core Skills</h2>
+    <ul>
+      <li>Web Security Testing (OWASP basics)</li>
+      <li>Recon & OSINT methodology</li>
+      <li>LOTL + post-compromise thinking</li>
+      <li>SOC workflows + detection mindset</li>
+      <li>Python • Linux • Nmap • Burp Suite • Wireshark</li>
+    </ul>
 
-<h2>Links</h2>
-<ul>
-<li><a href="https://danielisaace.medium.com/">Medium Articles</a></li>
-<li><a href="https://github.com/Daniel-Isaac-E">GitHub</a></li>
-<li><a href="https://www.linkedin.com/in/daniel-isaac-e/">LinkedIn</a></li>
-</ul>
-</div>
+    <h2>Projects</h2>
+    <ul>
+      <li><b>SSH Honeypot</b> — brute-force telemetry & attacker behavior patterns</li>
+      <li><b>IoT Vulnerability Scanner</b> — Nmap scanning + Shodan enrichment</li>
+      <li><b>Medium research logs</b> — persistence, LOTL, authentication failures</li>
+    </ul>
+
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/daniel-isaac-e/" target="_blank" style="color:var(--red)">LinkedIn</a></li>
+      <li><a href="https://danielisaace.medium.com/" target="_blank" style="color:var(--red)">Medium</a></li>
+      <li><a href="https://github.com/Daniel-Isaac-E" target="_blank" style="color:var(--red)">GitHub</a></li>
+    </ul>
+  </div>
 </div>
 </body>
 </html>
