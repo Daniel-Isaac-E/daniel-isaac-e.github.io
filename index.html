@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Daniel Isaac E | Cybersecurity (Offensive Security)</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Daniel Isaac E - Cybersecurity student focused on offensive security, adversary thinking, threat hunting, and security research. Articles on Medium + projects on GitHub." />
+  <meta name="keywords" content="Daniel Isaac E, cybersecurity, offensive security, penetration testing, SOC, threat hunting, red team, security research, India" />
+  <meta name="author" content="Daniel Isaac E" />
+
+  <!-- OpenGraph (Nice preview when shared) -->
+  <meta property="og:title" content="Daniel Isaac E | Cybersecurity" />
+  <meta property="og:description" content="Offensive Security mindset • Threat hunting • Adversary thinking • Projects + writeups" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:#0b1020;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --red:#ff2d2d;
+      --line:#111827;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;}
+    body{
+      background: radial-gradient(900px 500px at 50% -10%, rgba(255,45,45,.18), transparent 60%),
+                  radial-gradient(700px 400px at 90% 10%, rgba(59,130,246,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      padding:28px;
+    }
+    .wrap{max-width:980px;margin:auto;}
+    .top{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(11,16,32,.96), rgba(7,10,18,.86));
+      border-radius:22px;
+      padding:26px;
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
+      position:relative;
+      overflow:hidden;
+    }
+    .top::before{
+      content:"";
+      position:absolute;inset:-2px;
+      background:linear-gradient(90deg, transparent, rgba(255,45,45,.12), transparent);
+      filter:blur(0px);
+      opacity:.8;
+      pointer-events:none;
+    }
+    .name{
+      font-size:40px;
+      letter-spacing:.5px;
+      font-weight:800;
+      line-height:1.1;
+    }
+    .tag{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+    }
+    .pillrow{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;}
+    .pill{
+      border:1px solid var(--line);
+      padding:8px 12px;border-radius:999px;
+      background:rgba(0,0,0,.25);
+      font-size:13px;color:var(--text);
+    }
+    .pill strong{color:var(--red);font-weight:700}
+    .btns{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;}
+    a.btn{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.28);
+      color:var(--text);
+      font-weight:650;
+      transition:.2s ease;
+    }
+    a.btn:hover{
+      border-color:rgba(255,45,45,.65);
+      transform:translateY(-2px);
+      box-shadow:0 10px 25px rgba(255,45,45,.10);
+    }
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:rgba(11,16,32,.7);
+      border-radius:20px;
+      padding:16px;
+      min-height:130px;
+    }
+    .card h3{
+      font-size:14px;
+      color:var(--muted);
+      font-weight:700;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+    .card p{
+      margin-top:10px;
+      color:var(--text);
+      font-size:14px;
+      line-height:1.6;
+    }
+    .card p span{color:var(--red);font-weight:700;}
+    .section{
+      margin-top:20px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      border-radius:22px;
+      padding:18px;
+    }
+    .section h2{
+      font-size:16px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .list{margin-top:12px;display:grid;gap:12px;}
+    .item{
+      padding:14px 14px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(11,16,32,.65);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+    }
+    .item b{color:var(--text);font-size:14px;}
+    .item small{color:var(--muted);}
+    .item a{color:var(--red);text-decoration:none;font-weight:700;}
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      padding:12px 0;
+    }
+    @media(max-width:860px){
+      .grid{grid-template-columns:1fr;}
+      .name{font-size:34px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="name">Daniel Isaac E</div>
+      <div class="tag">
+        Cybersecurity student with an <b style="color:var(--red)">Offensive Security</b> mindset.<br/>
+        I write about <b>adversary thinking</b>, <b>post-compromise phases</b>, and why real security fails.
+      </div>
+
+      <div class="pillrow">
+        <div class="pill"><strong>Focus:</strong> Red Team Mindset</div>
+        <div class="pill"><strong>Learning:</strong> SOC + Detection Engineering</div>
+        <div class="pill"><strong>Topics:</strong> Recon • LOTL • Persistence</div>
+        <div class="pill"><strong>Location:</strong> India</div>
+      </div>
+
+      <div class="btns">
+        <a class="btn" href="https://www.linkedin.com/in/daniel-isaac-e/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://danielisaace.medium.com/" target="_blank">Medium Articles</a>
+        <a class="btn" href="https://github.com/Daniel-Isaac-E" target="_blank">GitHub Projects</a>
+        <a class="btn" href="mailto:daniel_isaac@zohomail.in">Email</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>What I Build</h3>
+          <p>Honeypots, security labs, and tools that turn theory into <span>real signals</span>.</p>
+        </div>
+        <div class="card">
+          <h3>What I Study</h3>
+          <p>Attack paths, stealth techniques, and where defenders create <span>blind spots</span>.</p>
+        </div>
+        <div class="card">
+          <h3>What I Write</h3>
+          <p>Beginner-friendly stories that slowly upgrade into <span>pro-level thinking</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Featured Articles</h2>
+      <div class="list">
+        <div class="item">
+          <div>
+            <b>Living Off The Land (LOTL)</b><br/>
+            <small>When attackers use YOUR tools against you</small>
+          </div>
+          <a href="https://danielisaace.medium.com/living-off-the-land-lotl-when-the-attacker-uses-your-own-tools-against-you-6a2abde89d28" target="_blank">Read</a>
+        </div>
+
+        <div class="item">
+          <div>
+            <b>Persistence: The Quiet Phase That Wins Breaches</b><br/>
+            <small>What happens after initial access</small>
+          </div>
+          <a href="https://danielisaace.medium.com/persistence-the-quiet-phase-that-wins-breaches-fbbe7357bd81" target="_blank">Read</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      © <span id="year"></span> Daniel Isaac E • Built on GitHub Pages • “Trust is a target.”
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
