@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog | Daniel Isaac E</title>
+
+<style>
+:root{
+  --bg:#070a12; --card:#0b1020; --line:#111827;
+  --text:#e5e7eb; --muted:#9ca3af; --red:#ff2d2d;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui;background:var(--bg);color:var(--text);overflow-x:hidden}
+.gridbg{
+  position:fixed; inset:0; z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,45,45,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,45,45,.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity:.18;
+  animation: drift 18s linear infinite;
+}
+@keyframes drift{to{transform:translate3d(-60px,-60px,0)}}
+
+.wrap{max-width:1000px;margin:auto;padding:28px}
+.card{
+  background:rgba(11,16,32,.92);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:26px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+.nav{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 18px}
+a.btn{
+  padding:10px 16px;border-radius:14px;
+  border:1px solid var(--line);
+  text-decoration:none;color:var(--text);
+  background:rgba(0,0,0,.25);
+  transition:.25s;
+}
+a.btn:hover{border-color:var(--red);transform:translateY(-2px)}
+h1{margin:0}
+p{color:var(--muted);line-height:1.7}
+.list{margin-top:16px;display:grid;gap:12px}
+.post{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:14px 16px;
+  background:rgba(0,0,0,.18);
+}
+.post b{color:var(--red)}
+.post a{color:var(--text);text-decoration:none}
+.post a:hover{text-decoration:underline}
+.small{color:var(--muted);font-size:13px;margin-top:6px}
+.bad{color:#fbbf24;font-weight:700}
+</style>
+</head>
+
+<body>
+<div class="gridbg"></div>
+
+<div class="wrap">
+  <div class="card">
+    <h1>Blog</h1>
+    <p>My cybersecurity writeups (Beginner → Pro). Most are published on Medium.</p>
+
+    <div class="nav">
+      <a class="btn" href="/">Home</a>
+      <a class="btn" href="/resume.html">Resume</a>
+      <a class="btn" href="/projects.html">Projects</a>
+      <a class="btn" href="https://danielisaace.medium.com/" target="_blank">Open Medium</a>
+    </div>
+
+    <div class="list" id="posts">
+      <div class="post">
+        <b>Loading latest posts…</b>
+        <div class="small">If this takes too long, Medium feed may be blocked (fallback will appear).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ✅ Reliable fallback posts (always show even if RSS is blocked)
+const fallback = [
+  {
+    title: "Living Off The Land (LOTL): When the attacker uses your own tools against you",
+    url: "https://danielisaace.medium.com/living-off-the-land-lotl-when-the-attacker-uses-your-own-tools-against-you-6a2abde89d28",
+    note: "Featured"
+  },
+  {
+    title: "Persistence: The Quiet Phase That Wins Breaches",
+    url: "https://danielisaace.medium.com/persistence-the-quiet-phase-that-wins-breaches-fbbe7357bd81",
+    note: "Featured"
+  }
+];
+
+function showPosts(items, label="Latest") {
+  const box = document.getElementById("posts");
+  box.innerHTML = "";
+  items.forEach(p => {
+    const div = document.createElement("div");
+    div.className = "post";
+    div.innerHTML = `
+      <div><b>${label}</b></div>
+      <div style="margin-top:6px;">
+        <a href="${p.url}" target="_blank">${p.title}</a>
+      </div>
+      <div class="small">${p.note ? `<span class="bad">${p.note}</span>` : ""}</div>
+    `;
+    box.appendChild(div);
+  });
+}
+
+// Try RSS via a public RSS->JSON service (may work, if blocked fallback is used)
+async function loadRSS() {
+  try {
+    const feedUrl = encodeURIComponent("https://medium.com/feed/@danielisaace");
+    const api = `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
+    const res = await fetch(api);
+    const data = await res.json();
+
+    if (!data || !data.items || data.items.length === 0) throw new Error("No items");
+
+    const latest = data.items.slice(0, 6).map(x => ({
+      title: x.title,
+      url: x.link,
+      note: x.pubDate ? ("Published: " + x.pubDate.split(" ")[0]) : ""
+    }));
+
+    showPosts(latest, "Latest");
+  } catch (e) {
+    // fallback always works
+    showPosts(fallback, "Featured");
+  }
+}
+
+loadRSS();
+</script>
+</body>
+</html>
