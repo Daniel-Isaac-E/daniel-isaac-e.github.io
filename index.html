@@ -1,93 +1,144 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Daniel Isaac E | Cybersecurity</title>
 
-<meta name="description" content="Daniel Isaac E - Cybersecurity student focused on offensive security, adversary thinking, and threat analysis.">
-<meta name="keywords" content="Daniel Isaac E, cybersecurity, offensive security, red team, SOC, threat hunting">
+<meta name="description" content="Daniel Isaac E - Cybersecurity student focused on offensive security, adversary thinking, and threat research." />
 
 <style>
 :root{
-  --bg:#070a12;--card:#0b1020;--line:#111827;
-  --text:#e5e7eb;--muted:#9ca3af;--red:#ff2d2d;
+  --bg:#070a12; --card:#0b1020; --line:#111827;
+  --text:#e5e7eb; --muted:#9ca3af; --red:#ff2d2d;
 }
 *{box-sizing:border-box}
 body{
-  margin:0;font-family:system-ui;
-  background:radial-gradient(800px 400px at 50% -10%,rgba(255,45,45,.15),transparent),
-             var(--bg);
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
   color:var(--text);
+  background: radial-gradient(900px 500px at 50% -10%, rgba(255,45,45,.14), transparent 60%),
+              radial-gradient(700px 400px at 90% 10%, rgba(99,102,241,.10), transparent 60%),
+              var(--bg);
+  overflow-x:hidden;
 }
+
+/* ✅ Animated grid background */
+.gridbg{
+  position:fixed; inset:0; z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,45,45,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,45,45,.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity:.18;
+  animation: drift 18s linear infinite;
+  filter: blur(.1px);
+}
+@keyframes drift{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-60px,-60px,0)}
+}
+
 .wrap{max-width:1000px;margin:auto;padding:28px}
 .card{
-  background:linear-gradient(180deg,rgba(11,16,32,.95),rgba(7,10,18,.9));
+  background:linear-gradient(180deg,rgba(11,16,32,.95),rgba(7,10,18,.88));
   border:1px solid var(--line);
   border-radius:22px;
   padding:28px;
-  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  box-shadow:0 30px 80px rgba(0,0,0,.52);
 }
-h1{font-size:42px;margin:0}
-.tag{color:var(--muted);margin-top:10px;line-height:1.6}
-.nav{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+h1{font-size:42px;margin:0;letter-spacing:.3px}
+.tag{color:var(--muted);margin-top:10px;line-height:1.65}
+.nav{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
 a.btn{
   padding:10px 16px;border-radius:14px;
   border:1px solid var(--line);
   text-decoration:none;color:var(--text);
-  background:rgba(0,0,0,.3);
-  transition:.25s;
+  background:rgba(0,0,0,.25);
+  transition:.25s ease;
 }
 a.btn:hover{
-  border-color:var(--red);
+  border-color:rgba(255,45,45,.7);
   transform:translateY(-2px);
-  box-shadow:0 10px 30px rgba(255,45,45,.15);
+  box-shadow:0 10px 26px rgba(255,45,45,.14);
 }
-.grid{
-  margin-top:24px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+.pills{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+.pill{
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.18);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  color:var(--text);
 }
+.pill b{color:var(--red)}
+.grid{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .box{
   border:1px solid var(--line);
   border-radius:18px;
   padding:16px;
   background:rgba(11,16,32,.7);
 }
-.box b{color:var(--red)}
-footer{text-align:center;margin:28px 0;color:var(--muted)}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.box h3{margin:0;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.box p{margin:10px 0 0;line-height:1.6;color:var(--text);font-size:14px}
+.box p span{color:var(--red);font-weight:700}
+footer{text-align:center;margin:22px 0;color:var(--muted);font-size:13px}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  h1{font-size:34px}
+}
 </style>
 </head>
 
 <body>
+<div class="gridbg"></div>
+
 <div class="wrap">
   <div class="card">
     <h1>Daniel Isaac E</h1>
     <div class="tag">
-      Cybersecurity student with an <b style="color:var(--red)">offensive mindset</b>.<br>
-      I study how attackers think, persist, and evade detection.
+      Cybersecurity student with an <b style="color:var(--red)">Offensive Security</b> mindset.<br/>
+      I study how attackers persist, evade detection, and exploit trust.
     </div>
 
     <div class="nav">
       <a class="btn" href="/resume.html">Resume</a>
       <a class="btn" href="/projects.html">Projects</a>
+      <a class="btn" href="/blog.html">Blog</a>
       <a class="btn" href="https://danielisaace.medium.com/" target="_blank">Medium</a>
       <a class="btn" href="https://github.com/Daniel-Isaac-E" target="_blank">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/daniel-isaac-e/" target="_blank">LinkedIn</a>
     </div>
 
+    <div class="pills">
+      <div class="pill"><b>Focus:</b> Red Team mindset</div>
+      <div class="pill"><b>Topics:</b> LOTL • Persistence • Recon</div>
+      <div class="pill"><b>Learning:</b> SOC + Detection Engineering</div>
+      <div class="pill"><b>Location:</b> India</div>
+    </div>
+
     <div class="grid">
-      <div class="box"><b>Focus</b><br>Red Team · SOC · Detection Gaps</div>
-      <div class="box"><b>Topics</b><br>LOTL · Persistence · Recon</div>
-      <div class="box"><b>Location</b><br>India</div>
+      <div class="box">
+        <h3>What I Build</h3>
+        <p>Honeypots, scripts, and security projects that generate <span>real signals</span>.</p>
+      </div>
+      <div class="box">
+        <h3>What I Research</h3>
+        <p>Post-compromise tradecraft: <span>LOTL</span>, persistence, and stealth behavior.</p>
+      </div>
+      <div class="box">
+        <h3>What I Write</h3>
+        <p>Beginner-friendly cyber stories that scale into <span>pro thinking</span>.</p>
+      </div>
     </div>
   </div>
 
-  <footer>© <span id="y"></span> Daniel Isaac E · Trust is a target.</footer>
+  <footer>© <span id="y"></span> Daniel Isaac E • Built on GitHub Pages • “Trust is a target.”</footer>
 </div>
 
-<script>document.getElementById("y").innerText=new Date().getFullYear()</script>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
