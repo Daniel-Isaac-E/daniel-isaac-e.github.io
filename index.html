@@ -1,144 +1,358 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Daniel Isaac E | Cybersecurity</title>
 
-<meta name="description" content="Daniel Isaac E - Cybersecurity student focused on offensive security, adversary thinking, and threat research." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-  --bg:#070a12; --card:#0b1020; --line:#111827;
-  --text:#e5e7eb; --muted:#9ca3af; --red:#ff2d2d;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  color:var(--text);
-  background: radial-gradient(900px 500px at 50% -10%, rgba(255,45,45,.14), transparent 60%),
-              radial-gradient(700px 400px at 90% 10%, rgba(99,102,241,.10), transparent 60%),
-              var(--bg);
-  overflow-x:hidden;
-}
+<title>Daniel Isaac E | Cybersecurity Portfolio</title>
 
-/* ✅ Animated grid background */
-.gridbg{
-  position:fixed; inset:0; z-index:-1;
-  background-image:
-    linear-gradient(rgba(255,45,45,.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,45,45,.07) 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity:.18;
-  animation: drift 18s linear infinite;
-  filter: blur(.1px);
-}
-@keyframes drift{
-  from{transform:translate3d(0,0,0)}
-  to{transform:translate3d(-60px,-60px,0)}
-}
+<meta name="description"
+content="Daniel Isaac E - Cybersecurity student specializing in Offensive Security, Web Application Security, Threat Detection and Security Research.">
 
-.wrap{max-width:1000px;margin:auto;padding:28px}
-.card{
-  background:linear-gradient(180deg,rgba(11,16,32,.95),rgba(7,10,18,.88));
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:28px;
-  box-shadow:0 30px 80px rgba(0,0,0,.52);
-}
-h1{font-size:42px;margin:0;letter-spacing:.3px}
-.tag{color:var(--muted);margin-top:10px;line-height:1.65}
-.nav{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-a.btn{
-  padding:10px 16px;border-radius:14px;
-  border:1px solid var(--line);
-  text-decoration:none;color:var(--text);
-  background:rgba(0,0,0,.25);
-  transition:.25s ease;
-}
-a.btn:hover{
-  border-color:rgba(255,45,45,.7);
-  transform:translateY(-2px);
-  box-shadow:0 10px 26px rgba(255,45,45,.14);
-}
-.pills{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-.pill{
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.18);
-  padding:8px 12px;
-  border-radius:999px;
-  font-size:13px;
-  color:var(--text);
-}
-.pill b{color:var(--red)}
-.grid{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.box{
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:16px;
-  background:rgba(11,16,32,.7);
-}
-.box h3{margin:0;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
-.box p{margin:10px 0 0;line-height:1.6;color:var(--text);font-size:14px}
-.box p span{color:var(--red);font-weight:700}
-footer{text-align:center;margin:22px 0;color:var(--muted);font-size:13px}
+<meta name="keywords"
+content="Cybersecurity, Penetration Testing, Ethical Hacking, Burp Suite, Nmap, ELK Stack, Raspberry Pi, Daniel Isaac">
 
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr}
-  h1{font-size:34px}
-}
-</style>
+<meta name="author"
+content="Daniel Isaac E">
+
+<meta property="og:title"
+content="Daniel Isaac E | Cybersecurity Portfolio">
+
+<meta property="og:description"
+content="Cybersecurity Portfolio showcasing projects, blogs, certifications and research.">
+
+<meta property="og:type"
+content="website">
+
+<meta name="theme-color"
+content="#0d1117">
+
+<link rel="stylesheet"
+href="assets/css/style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
-<div class="gridbg"></div>
 
-<div class="wrap">
-  <div class="card">
-    <h1>Daniel Isaac E</h1>
-    <div class="tag">
-      Cybersecurity student with an <b style="color:var(--red)">Offensive Security</b> mindset.<br/>
-      I study how attackers persist, evade detection, and exploit trust.
-    </div>
+<!-- Loading Screen -->
 
-    <div class="nav">
-      <a class="btn" href="/resume.html">Resume</a>
-      <a class="btn" href="/projects.html">Projects</a>
-      <a class="btn" href="/blog.html">Blog</a>
-      <a class="btn" href="https://danielisaace.medium.com/" target="_blank">Medium</a>
-      <a class="btn" href="https://github.com/Daniel-Isaac-E" target="_blank">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/daniel-isaac-e/" target="_blank">LinkedIn</a>
-    </div>
+<div id="loader">
 
-    <div class="pills">
-      <div class="pill"><b>Focus:</b> Red Team mindset</div>
-      <div class="pill"><b>Topics:</b> LOTL • Persistence • Recon</div>
-      <div class="pill"><b>Learning:</b> SOC + Detection Engineering</div>
-      <div class="pill"><b>Location:</b> India</div>
-    </div>
+<div class="loader-logo">
 
-    <div class="grid">
-      <div class="box">
-        <h3>What I Build</h3>
-        <p>Honeypots, scripts, and security projects that generate <span>real signals</span>.</p>
-      </div>
-      <div class="box">
-        <h3>What I Research</h3>
-        <p>Post-compromise tradecraft: <span>LOTL</span>, persistence, and stealth behavior.</p>
-      </div>
-      <div class="box">
-        <h3>What I Write</h3>
-        <p>Beginner-friendly cyber stories that scale into <span>pro thinking</span>.</p>
-      </div>
-    </div>
-  </div>
+D
 
-  <footer>© <span id="y"></span> Daniel Isaac E • Built on GitHub Pages • “Trust is a target.”</footer>
 </div>
 
-<script>
-document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+<p>Loading Portfolio...</p>
+
+</div>
+
+<!-- Progress Bar -->
+
+<div id="progressBar"></div>
+
+<!-- Background -->
+
+<div class="background">
+
+<div class="grid"></div>
+
+<div class="glow glow1"></div>
+
+<div class="glow glow2"></div>
+
+<div class="glow glow3"></div>
+
+</div>
+
+<!-- Navigation -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<span>D</span>aniel
+
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="blog.html">Blog</a></li>
+
+<li><a href="resume.html">Resume</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section id="home"
+class="hero">
+
+<div class="hero-left">
+
+<p class="small-title">
+
+👋 Hello, I'm
+
+</p>
+
+<h1>
+
+Daniel Isaac E
+
+</h1>
+
+<h2>
+
+<span id="typing"></span>
+
+</h2>
+
+<p class="hero-text">
+
+Cybersecurity undergraduate passionate about offensive security,
+web application testing, detection engineering,
+and practical cybersecurity research.
+
+I enjoy building real-world security projects,
+writing technical articles,
+and continuously improving my skills through hands-on labs.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="projects.html"
+class="primary-btn">
+
+View Projects
+
+</a>
+
+<a href="assets/Daniel Resume.pdf"
+download
+class="secondary-btn">
+
+Download Resume
+
+</a>
+
+</div>
+
+<div class="socials">
+
+<a href="https://github.com/Daniel-Isaac-E"
+target="_blank">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+<a href="https://www.linkedin.com/in/daniel-isaac-e/"
+target="_blank">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="https://danielisaace.hashnode.dev/"
+target="_blank">
+
+<i class="fa-solid fa-blog"></i>
+
+</a>
+
+<a href="mailto:connectme.daniel@gmail.com">
+
+<i class="fa-solid fa-envelope"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-card">
+
+<div class="status">
+
+<div class="dot"></div>
+
+Available for Internships
+
+</div>
+
+<h3>
+
+Cybersecurity Student
+
+</h3>
+
+<div class="line"></div>
+
+<div class="skill">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Offensive Security
+
+</div>
+
+<div class="skill">
+
+<i class="fa-solid fa-bug"></i>
+
+Web Application Security
+
+</div>
+
+<div class="skill">
+
+<i class="fa-solid fa-network-wired"></i>
+
+Threat Detection
+
+</div>
+
+<div class="skill">
+
+<i class="fa-solid fa-terminal"></i>
+
+Linux
+
+</div>
+
+<div class="skill">
+
+<i class="fa-solid fa-code"></i>
+
+Python
+
+</div>
+
+<div class="skill">
+
+<i class="fa-solid fa-server"></i>
+
+ELK Stack
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section
+id="about"
+class="about">
+
+<h2>
+
+About Me
+
+</h2>
+
+<p>
+
+I'm a Cybersecurity undergraduate from India with a strong interest
+in Offensive Security, Vulnerability Assessment,
+Detection Engineering and practical security research.
+
+My work focuses on building projects that simulate real-world
+security scenarios including honeypots,
+web application testing,
+network analysis and incident monitoring.
+
+Beyond technical projects,
+I actively publish cybersecurity articles,
+participate in internships
+and continuously learn modern attack techniques
+and defensive strategies.
+
+</p>
+
+<div class="stats">
+
+<div>
+
+<h3>6+</h3>
+
+<p>Projects</p>
+
+</div>
+
+<div>
+
+<h3>3+</h3>
+
+<p>Certifications</p>
+
+</div>
+
+<div>
+
+<h3>2+</h3>
+
+<p>Internships</p>
+
+</div>
+
+<div>
+
+<h3>2026</h3>
+
+<p>Graduate</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="assets/js/script.js"></script>
+
 </body>
+
 </html>
